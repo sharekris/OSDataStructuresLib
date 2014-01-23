@@ -16,6 +16,12 @@
 		01F305E6189070EA00626E72 /* libOSDataStructuresLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 01F305CE189070EA00626E72 /* libOSDataStructuresLib.a */; };
 		01F305EC189070EA00626E72 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 01F305EA189070EA00626E72 /* InfoPlist.strings */; };
 		01F305EE189070EA00626E72 /* OSDataStructuresLibTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 01F305ED189070EA00626E72 /* OSDataStructuresLibTests.m */; };
+		01F305F91890712200626E72 /* OSMutableGraph.m in Sources */ = {isa = PBXBuildFile; fileRef = 01F305F81890712200626E72 /* OSMutableGraph.m */; };
+		01F305FA1890712200626E72 /* OSMutableGraph.m in Sources */ = {isa = PBXBuildFile; fileRef = 01F305F81890712200626E72 /* OSMutableGraph.m */; };
+		01F305FF1890734E00626E72 /* OSGraphNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 01F305FE1890734E00626E72 /* OSGraphNode.m */; };
+		01F306001890734E00626E72 /* OSGraphNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 01F305FE1890734E00626E72 /* OSGraphNode.m */; };
+		01F306031890735B00626E72 /* OSGraphEdge.m in Sources */ = {isa = PBXBuildFile; fileRef = 01F306021890735B00626E72 /* OSGraphEdge.m */; };
+		01F306041890735B00626E72 /* OSGraphEdge.m in Sources */ = {isa = PBXBuildFile; fileRef = 01F306021890735B00626E72 /* OSGraphEdge.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +59,13 @@
 		01F305E9189070EA00626E72 /* OSDataStructuresLibTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "OSDataStructuresLibTests-Info.plist"; sourceTree = "<group>"; };
 		01F305EB189070EA00626E72 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		01F305ED189070EA00626E72 /* OSDataStructuresLibTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OSDataStructuresLibTests.m; sourceTree = "<group>"; };
+		01F305F71890712200626E72 /* OSMutableGraph.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSMutableGraph.h; sourceTree = "<group>"; };
+		01F305F81890712200626E72 /* OSMutableGraph.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSMutableGraph.m; sourceTree = "<group>"; };
+		01F305FC189071B900626E72 /* Defines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Defines.h; sourceTree = "<group>"; };
+		01F305FD1890734E00626E72 /* OSGraphNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSGraphNode.h; sourceTree = "<group>"; };
+		01F305FE1890734E00626E72 /* OSGraphNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSGraphNode.m; sourceTree = "<group>"; };
+		01F306011890735B00626E72 /* OSGraphEdge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSGraphEdge.h; sourceTree = "<group>"; };
+		01F306021890735B00626E72 /* OSGraphEdge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSGraphEdge.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +123,8 @@
 		01F305D3189070EA00626E72 /* OSDataStructuresLib */ = {
 			isa = PBXGroup;
 			children = (
+				01F305FC189071B900626E72 /* Defines.h */,
+				01F305FB1890712900626E72 /* MutableGraph */,
 				01F305D6189070EA00626E72 /* OSDataStructuresLib.h */,
 				01F305D8189070EA00626E72 /* OSDataStructuresLib.m */,
 				01F305D4189070EA00626E72 /* Supporting Files */,
@@ -141,6 +156,19 @@
 				01F305EA189070EA00626E72 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		01F305FB1890712900626E72 /* MutableGraph */ = {
+			isa = PBXGroup;
+			children = (
+				01F305F71890712200626E72 /* OSMutableGraph.h */,
+				01F305F81890712200626E72 /* OSMutableGraph.m */,
+				01F305FD1890734E00626E72 /* OSGraphNode.h */,
+				01F305FE1890734E00626E72 /* OSGraphNode.m */,
+				01F306011890735B00626E72 /* OSGraphEdge.h */,
+				01F306021890735B00626E72 /* OSGraphEdge.m */,
+			);
+			name = MutableGraph;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -223,7 +251,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01F305FF1890734E00626E72 /* OSGraphNode.m in Sources */,
+				01F306031890735B00626E72 /* OSGraphEdge.m in Sources */,
 				01F305D9189070EA00626E72 /* OSDataStructuresLib.m in Sources */,
+				01F305F91890712200626E72 /* OSMutableGraph.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -231,7 +262,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01F306001890734E00626E72 /* OSGraphNode.m in Sources */,
+				01F306041890735B00626E72 /* OSGraphEdge.m in Sources */,
 				01F305EE189070EA00626E72 /* OSDataStructuresLibTests.m in Sources */,
+				01F305FA1890712200626E72 /* OSMutableGraph.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
