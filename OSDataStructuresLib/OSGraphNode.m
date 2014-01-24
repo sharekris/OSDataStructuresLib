@@ -9,7 +9,7 @@
 #import "OSGraphNode.h"
 
 @implementation OSGraphNode
-@synthesize name, nodeObject, dictionaryOfEdges;
+@synthesize name, nodeObject, nodeContext, dictionaryOfEdges;
 
 - (id) init
 {

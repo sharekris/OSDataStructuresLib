@@ -59,6 +59,7 @@
 {
     OSMutableGraph *newGraph = [[OSMutableGraph alloc] init];
     
+    // Let us add the nodes first.
     for (OSGraphNode *eachNode in dictionaryOfNodes)
     {
         OSGraphNode *eachNewNode = [eachNode copy];
@@ -66,6 +67,15 @@
         [newGraph addNode:eachNewNode error:&error];
     }
     
+    // Let us now add the edges.
+    for (OSGraphNode *eachNode in dictionaryOfNodes)
+    {
+        NSArray *aryOfEdges = [eachNode adjacencyList];
+        for (OSGraphEdge *eachEdge in aryOfEdges)
+        {
+            
+        }
+    }
     return newGraph;
 }
 
@@ -74,17 +84,14 @@
     OSGraphNode *existingNode = [dictionaryCopyOfNodes valueForKey:node.name];
     if (existingNode) return;  // Exit criteria
     
-    for (OSGraphNode *eachNode in dictionaryOfNodes)
+    OSGraphNode *newNode = [[OSGraphNode alloc] init];
+    newNode.name = [NSString stringWithFormat:@"%@", node.name];
+    
+    for (OSGraphEdge *eachEdge in node.adjacencyList)
     {
-        OSGraphNode *newNode = [[OSGraphNode alloc] init];
-        newNode.name = [NSString stringWithFormat:@"%@", eachNode.name];
-        
-        for (OSGraphEdge *eachEdge in eachNode.adjacencyList)
-        {
-            [self recursiveCopy:eachEdge.toGraphNode intoDictionary:dictionaryCopyOfNodes];
-            NSError *error = nil;
-            [newNode addEdgeToNode:eachEdge.toGraphNode withWeight:eachEdge.weight error:&error];
-        }
+        NSError *error = nil;
+        [newNode addEdgeToNode:eachEdge.toGraphNode withWeight:eachEdge.weight error:&error];
+        [self recursiveCopy:eachEdge.toGraphNode intoDictionary:dictionaryCopyOfNodes];
     }
 }
 

@@ -19,6 +19,7 @@
 
 @property (nonatomic) NSString* name;
 @property (nonatomic) id nodeObject;
+@property (nonatomic) id nodeContext;
 @property (nonatomic, readonly) NSMutableDictionary *dictionaryOfEdges;
 
 - (OSGraphEdge*) addEdgeToNode:(OSGraphNode*)toNode withWeight:(double)weight error:(NSError* __autoreleasing *)error;
