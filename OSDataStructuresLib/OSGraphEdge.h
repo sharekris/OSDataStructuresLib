@@ -7,14 +7,17 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "OSGraphNode.h"
 
-@interface OSGraphEdge : NSObject <NSCopying>  {
+@class OSGraphNode;
+
+@interface OSGraphEdge : NSObject  {
 
 }
 
 @property (nonatomic) double weight;
 @property (nonatomic) OSGraphNode *fromGraphNode;
 @property (nonatomic) OSGraphNode *toGraphNode;
+@property (nonatomic) id edgeContext;
+@property (nonatomic) id edgeObject;
 
 @end

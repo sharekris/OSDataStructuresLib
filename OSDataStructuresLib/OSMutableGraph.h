@@ -26,5 +26,8 @@
 - (OSGraphEdge*) addEdge:(OSGraphNode*)fromNode toNode:(OSGraphNode*)toNode withWeight:(double)weight error:(NSError* __autoreleasing *)error;
 - (NSArray*) findShortestPathFromNode:(OSGraphNode*)fromNode toNode:(OSGraphNode*)toNode;
 - (OSMutableGraph*) copy;
+- (OSGraphNode*) nodeByName:(NSString*)name error:(NSError* __autoreleasing *)error;
+- (NSArray*) getAllNodes;
+- (id) initWithGraphType:(GraphType) graphType;
 
 @end

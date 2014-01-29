@@ -9,28 +9,19 @@
 #import "OSGraphNode.h"
 
 @implementation OSGraphNode
-@synthesize name, nodeObject, nodeContext, dictionaryOfEdges;
+@synthesize name=_name, nodeObject=_nodeObject, nodeContext, dictionaryOfEdges;
 
-- (id) init
+- (id) initWithName:(NSString*) name andNodeObject:(id) obj
 {
     self = [super init];
     if (self)
     {
+        _name = name;
+        _nodeObject = obj;
         dictionaryOfEdges = [[NSMutableDictionary alloc] init];
         return self;
     }
     
-    return nil;
-}
-
-- (id) copyWithZone:(NSZone *)zone
-{
-    OSGraphNode *newNode = [[OSGraphNode alloc] init];
-    
-    for (OSGraphEdge *eachEdge in dictionaryOfEdges)
-    {
-        OSGraphEdge *newEdge = [eachEdge copy];
-    }
     return nil;
 }
 
@@ -46,8 +37,20 @@
     return newEdge;
 }
 
-- (NSArray*) adjacencyList
+- (BOOL) addEdge:(OSGraphEdge*) edge error:(NSError* __autoreleasing *)error
+{
+    [dictionaryOfEdges setValue:edge forKey:edge.toGraphNode.name];
+    return true;
+}
+
+- (NSArray*) getAllEdges
 {
     return [dictionaryOfEdges allValues];
+}
+
+- (id) copyWithZone:(NSZone *)zone
+{
+    OSGraphNode __autoreleasing *newNode = [[OSGraphNode alloc] initWithName:_name andNodeObject:_nodeObject];
+    return newNode;
 }
 @end

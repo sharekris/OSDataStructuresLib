@@ -9,7 +9,7 @@
 #import "OSGraphEdge.h"
 
 @implementation OSGraphEdge
-@synthesize fromGraphNode, toGraphNode, weight;
+@synthesize fromGraphNode, toGraphNode, weight, edgeContext, edgeObject;
 
 @end
 
